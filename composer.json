@@ -1,0 +1,40 @@
+{
+    "name": "saman/barekat-electronic-health",
+    "description": "This Package Share All Models And Other Part Of Project",
+    "license": "SF",
+    "authors": [
+        {
+            "name": "Saman Farabi",
+            "email": "saman.farabi1818@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4.3|^8.1",
+        "morilog/jalali": "3.*",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "pion/laravel-chunk-upload": "dev-master",
+        "illuminate/notifications": "^8.0",
+        "predis/predis": "^1.1",
+        "picqer/php-barcode-generator": "^2.2",
+        "brianium/paratest": "^6.3",
+        "sentry/sentry-laravel": "^2.11.1"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.7",
+        "symfony/console": "^5.0",
+        "illuminate/console": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saman\\BarekatElectronicHealth\\": "src/",
+            "Saman\\BarekatElectronicHealth\\Database\\Factories\\": "src/database/factories"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Saman\\BarekatElectronicHealth\\SharedServiceProvider"
+            ]
+        }
+    }
+}

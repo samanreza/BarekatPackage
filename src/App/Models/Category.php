@@ -2,6 +2,7 @@
 
 namespace Saman\BarekatElectronicHealth\App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\Self_;
@@ -17,10 +18,12 @@ class Category extends ParentModel
     const COLUMN_ID = 'id';
     const COLUMN_TITLE = 'title';
     const COLUMN_PARENT_ID = 'parent_id';
+    const COLUMN_IS_ACTIVE = 'is_active';
 
     protected $fillable = [
         self::COLUMN_TITLE,
-        self::COLUMN_PARENT_ID
+        self::COLUMN_PARENT_ID,
+        self::COLUMN_IS_ACTIVE
     ];
 
     /**
@@ -59,6 +62,15 @@ class Category extends ParentModel
     public function getParentId(): ?int
     {
         return $this->{self::COLUMN_PARENT_ID};
+    }
+
+    /**
+     * @param Builder $builder
+     * @return Builder
+     */
+    public function scopeActiveCategory(Builder $builder): Builder
+    {
+        return $builder->where(self::COLUMN_IS_ACTIVE,1);
     }
 
     public function onCreating()

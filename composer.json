@@ -8,6 +8,7 @@
             "email": "saman.farabi1818@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": "^7.4.3|^8.1",
         "morilog/jalali": "3.*",

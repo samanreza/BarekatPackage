@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string(Category::COLUMN_TITLE)->unique();
             $table->unsignedBigInteger(Category::COLUMN_PARENT_ID)->index()->nullable();
+            $table->unsignedTinyInteger(Category::COLUMN_IS_ACTIVE)->index();
             $table->timestamps();
         });
     }

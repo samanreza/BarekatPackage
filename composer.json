@@ -1,6 +1,7 @@
 {
     "name": "saman/barekat-electronic-health",
     "description": "This Package Share All Models And Other Part Of Project",
+    "type": "library",
     "license": "SF",
     "authors": [
         {
@@ -34,8 +35,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Saman\\BarekatElectronicHealth\\SharedServiceProvider"
+                "Saman\\BarekatElectronicHealth\\Providers\\AppRepositoriesProvider"
             ]
         }
-    }
+    },
+    "discard-changes": true
 }

@@ -71,12 +71,13 @@ class Category extends ParentModel
     public static function getCategories()
     {
         return self::query()
-            ->with('activeCategory')
+            ->with('parent')
             ->select(
                 self::COLUMN_TITLE,
                 self::COLUMN_PARENT_ID,
                 self::COLUMN_IS_ACTIVE
             )
+            ->activeCategory()
             ->get();
     }
     /**

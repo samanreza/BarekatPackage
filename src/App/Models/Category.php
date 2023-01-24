@@ -64,10 +64,8 @@ class Category extends ParentModel
         return $this->{self::COLUMN_PARENT_ID};
     }
 
-    /**
-     * @return Builder
-     */
-    public static function getCategories(): Builder
+
+    public static function getCategories()
     {
         return self::query()
             ->select(

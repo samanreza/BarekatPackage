@@ -65,15 +65,20 @@ class Category extends ParentModel
     }
 
 
-    public static function getCategories()
+    /**
+     * @return Builder
+     */
+    public static function getCategories(): Builder
     {
-        return self::query()
+        $query = self::query()
             ->select(
                 self::COLUMN_TITLE,
                 self::COLUMN_PARENT_ID,
                 self::COLUMN_IS_ACTIVE
             )
-            ->whereHas('activeCategory');
+            ->whereHas('activeCategory')
+            ->get();
+        return $query;
     }
     /**
      * @param Builder $builder

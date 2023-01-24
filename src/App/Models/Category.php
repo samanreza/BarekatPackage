@@ -72,6 +72,7 @@ class Category extends ParentModel
     {
         return self::query()
             ->select(
+                self::COLUMN_ID,
                 self::COLUMN_TITLE,
                 self::COLUMN_PARENT_ID,
                 self::COLUMN_IS_ACTIVE

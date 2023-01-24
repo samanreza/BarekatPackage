@@ -66,19 +66,18 @@ class Category extends ParentModel
 
 
     /**
-     * @return Builder
+     * @return Builder|Builder[]|\Illuminate\Database\Eloquent\Collection
      */
-    public static function getCategories(): Builder
+    public static function getCategories()
     {
-        $query = self::query()
+        return self::query()
+            ->with('activeCategory')
             ->select(
                 self::COLUMN_TITLE,
                 self::COLUMN_PARENT_ID,
                 self::COLUMN_IS_ACTIVE
             )
-            ->whereHas('activeCategory')
             ->get();
-        return $query;
     }
     /**
      * @param Builder $builder

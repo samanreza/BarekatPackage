@@ -38,4 +38,16 @@ trait Tree
     {
         return $this->belongsTo($this, 'parent_id')->with('allparent');
     }
+
+    public function mainParent()
+    {
+        $parents    = $this->allparent()->get()->toArray();
+        $mainParent = collect(flatten($parents,'allparent',true))->where('parent_id',null)->first();
+
+        if (count($mainParent)) {
+            return $mainParent['id'];
+        }
+
+        return null;
+    }
 }

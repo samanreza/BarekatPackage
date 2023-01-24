@@ -97,7 +97,7 @@ class Category extends ParentModel
      */
     public function scopeParentIdIsNull(Builder $builder):Builder
     {
-        return $builder->where(self::COLUMN_PARENT_ID,null)
+        return $builder->where(self::COLUMN_PARENT_ID,null);
     }
 
     public function onCreating()

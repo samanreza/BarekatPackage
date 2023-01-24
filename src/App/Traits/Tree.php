@@ -30,4 +30,12 @@ trait Tree
     {
         return $this->hasMany($this, 'parent_id')->with("allchildren");
     }
+
+    /**
+     * @return BelongsTo
+     */
+    public function allparent(): BelongsTo
+    {
+        return $this->belongsTo($this, 'parent_id')->with('allparent');
+    }
 }

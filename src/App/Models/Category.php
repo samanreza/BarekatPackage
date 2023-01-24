@@ -77,7 +77,7 @@ class Category extends ParentModel
                 self::COLUMN_PARENT_ID,
                 self::COLUMN_IS_ACTIVE
             )
-            ->where(self::COLUMN_PARENT_ID,null)
+            ->parentIdIsNull()
             ->with('childs')
             ->activeCategory()
             ->get();
@@ -89,6 +89,15 @@ class Category extends ParentModel
     public function scopeActiveCategory(Builder $builder): Builder
     {
         return $builder->where(self::COLUMN_IS_ACTIVE,1);
+    }
+
+    /**
+     * @param Builder $builder
+     * @return Builder
+     */
+    public function scopeParentIdIsNull(Builder $builder):Builder
+    {
+        return $builder->where(self::COLUMN_PARENT_ID,null)
     }
 
     public function onCreating()

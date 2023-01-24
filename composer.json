@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Saman\\BarekatElectronicHealth\\Providers\\AppRepositoriesProvider"
+                "Saman\\BarekatElectronicHealth\\App\\Providers\\AppRepositoriesProvider"
             ]
         }
     },

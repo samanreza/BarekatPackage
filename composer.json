@@ -31,6 +31,12 @@
             "Saman\\BarekatElectronicHealth\\Database\\Factories\\": "src/database/factories"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Saman\\BarekatElectronicHealth\\Tests\\Feature\\": "src/tests/Feature",
+            "Saman\\BarekatElectronicHealth\\Tests\\Unit\\": "src/tests/Unit"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
